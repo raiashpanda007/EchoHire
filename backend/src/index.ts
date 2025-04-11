@@ -11,6 +11,9 @@ app.get('/', (req, res) => {
     res.send('Hello World!')
 })
 
+import jobroute from './routes/jobs.routes'
+
+app.use('/api/jobs', jobroute)
 
 app.listen(port, () => {
     console.log(`App listening on port ${port}`)

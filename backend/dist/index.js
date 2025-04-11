@@ -11,6 +11,8 @@ app.use(express_1.default.urlencoded({ extended: true }));
 app.get('/', (req, res) => {
     res.send('Hello World!');
 });
+const jobs_routes_1 = __importDefault(require("./routes/jobs.routes"));
+app.use('/api/jobs', jobs_routes_1.default);
 app.listen(port, () => {
     console.log(`App listening on port ${port}`);
 });
