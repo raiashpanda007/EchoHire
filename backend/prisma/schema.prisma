@@ -1,0 +1,54 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Job {
+  id          Int           @id @default(autoincrement())
+  title       String
+  description String
+  requirements String
+  createdAt   DateTime      @default(now())
+  appointments Appointment[]
+}
+
+model Candidate {
+  id            Int           @id @default(autoincrement())
+  name          String
+  phone         String        @unique
+  currentCtc    Float
+  expectedCtc   Float
+  noticePeriod  String
+  experience    Float
+  appointments  Appointment[]
+  conversations Conversation[]
+}
+
+model Appointment {
+  id          Int       @id @default(autoincrement())
+  jobId       Int
+  candidateId Int
+  dateTime    DateTime
+  status      String
+  job         Job       @relation(fields: [jobId], references: [id])
+  candidate   Candidate @relation(fields: [candidateId], references: [id])
+}
+
+model Conversation {
+  id                Int      @id @default(autoincrement())
+  candidateId       Int
+  transcript        String
+  entitiesExtracted Json
+  candidate         Candidate @relation(fields: [candidateId], references: [id])
+}
