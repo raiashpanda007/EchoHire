@@ -37,11 +37,37 @@ const createJob = asyncHandler(async (req, res) => {
     
 })
 
+
+
+const updateJobDescription = asyncHandler(async (req, res) => {
+    const { id } = req.params
+    const { description } = req.body
+
+    const job = await prisma.job.update({
+        where: {
+            id: Number(id)
+        },
+        data: {
+            description
+        }
+    })
+    if (!job) {
+        return res.status(500).json(new response(500, "Error updating job", {}))
+    }
+    return res.status(200).json(new response(200, "Job updated successfully", job))
+})
+
 const getAllJobs = asyncHandler(async (req, res) => {    
+    const jobs = await prisma.job.findMany()
+    if (!jobs) {
+        return res.status(500).json(new response(500, "Error fetching jobs", {}))
+    }
+    return res.status(200).json(new response(200, "Jobs fetched successfully", jobs))
 })
 
 
 export {
     createJob,
-    getAllJobs
+    getAllJobs,
+    updateJobDescription
 }

@@ -13,6 +13,10 @@ app.get('/', (req, res) => {
 });
 const jobs_routes_1 = __importDefault(require("./routes/jobs.routes"));
 app.use('/api/jobs', jobs_routes_1.default);
+const candidates_routes_1 = __importDefault(require("./routes/candidates.routes"));
+app.use('/api/candidates', candidates_routes_1.default);
+const appointments_routes_1 = __importDefault(require("./routes/appointments.routes"));
+app.use('/api/appointments', appointments_routes_1.default);
 app.listen(port, () => {
     console.log(`App listening on port ${port}`);
 });

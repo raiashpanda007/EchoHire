@@ -15,6 +15,12 @@ import jobroute from './routes/jobs.routes'
 
 app.use('/api/jobs', jobroute)
 
+import candidateroute from './routes/candidates.routes'
+app.use('/api/candidates', candidateroute)
+
+import appointmentroute from './routes/appointments.routes'
+app.use('/api/appointments', appointmentroute)
+
 app.listen(port, () => {
     console.log(`App listening on port ${port}`)
 }
