@@ -1,0 +1,86 @@
+version: "3.1"
+
+intents:
+  - affirm
+  - deny
+  - goodbye
+  - greet
+  - inform
+  - provide_info
+  - interested
+  - check_availability
+  - inform_name
+  - inform_phone
+  - inform_ctc
+  - inform_notice_period
+  - inform_experience
+  - inform_availability
+  - confirm_interest
+  - faq
+
+entities:
+  - name
+  - phone
+  - currentCtc
+  - expectedCtc
+  - noticePeriod
+  - experience
+  - availability
+
+slots:
+  name:
+    type: text
+    influence_conversation: true
+    mappings: []
+  phone:
+    type: text
+    influence_conversation: true
+    mappings: []
+  currentCtc:
+    type: text
+    influence_conversation: true
+    mappings: []
+  expectedCtc:
+    type: text
+    influence_conversation: true
+    mappings: []
+  noticePeriod:
+    type: text
+    influence_conversation: true
+    mappings: []
+  experience:
+    type: text
+    influence_conversation: true
+    mappings: []
+  availability:
+    type: text
+    influence_conversation: true
+    mappings: []
+
+responses:
+  utter_greet:
+    - text: "Hello! How can I help you today?"
+  utter_goodbye:
+    - text: "Goodbye! Have a great day."
+  utter_ask_name:
+    - text: "May I have your name, please?"
+  utter_ask_phone:
+    - text: "What's your phone number?"
+  utter_ask_ctc:
+    - text: "What's your current and expected CTC?"
+  utter_ask_notice_period:
+    - text: "What's your notice period?"
+  utter_ask_experience:
+    - text: "How many years of experience do you have?"
+  utter_ask_availability:
+    - text: "Are you available for a call on weekdays?"
+  utter_confirm_booking:
+    - text: "Thanks! Your data has been recorded. We will get back to you soon."
+
+actions:
+  - action_store_candidate_data
+  - action_answer_faq
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

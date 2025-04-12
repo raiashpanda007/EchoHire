@@ -1,0 +1,48 @@
+{
+  "lookup": {
+    "rules": {
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"inform_ctc\"}}]": "utter_ask_notice_period",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"inform_ctc\"}}, {\"prev_action\": {\"action_name\": \"utter_ask_notice_period\"}, \"user\": {\"intent\": \"inform_ctc\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"inform_notice_period\"}}]": "utter_ask_experience",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"inform_notice_period\"}}, {\"prev_action\": {\"action_name\": \"utter_ask_experience\"}, \"user\": {\"intent\": \"inform_notice_period\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"inform_availability\"}}]": "utter_confirm_booking",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"inform_availability\"}}, {\"prev_action\": {\"action_name\": \"utter_confirm_booking\"}, \"user\": {\"intent\": \"inform_availability\"}}]": "action_store_candidate_data",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"inform_availability\"}}, {\"prev_action\": {\"action_name\": \"utter_confirm_booking\"}, \"user\": {\"intent\": \"inform_availability\"}}, {\"prev_action\": {\"action_name\": \"action_store_candidate_data\"}, \"user\": {\"intent\": \"inform_availability\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"faq\"}}]": "action_answer_faq",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"faq\"}}, {\"prev_action\": {\"action_name\": \"action_answer_faq\"}, \"user\": {\"intent\": \"faq\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"inform_phone\"}}]": "utter_ask_ctc",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"inform_phone\"}}, {\"prev_action\": {\"action_name\": \"utter_ask_ctc\"}, \"user\": {\"intent\": \"inform_phone\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"inform_experience\"}}]": "utter_ask_availability",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"inform_experience\"}}, {\"prev_action\": {\"action_name\": \"utter_ask_availability\"}, \"user\": {\"intent\": \"inform_experience\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"greet\"}}]": "utter_ask_name",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"greet\"}}, {\"prev_action\": {\"action_name\": \"utter_ask_name\"}, \"user\": {\"intent\": \"greet\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"inform_name\"}}]": "utter_ask_phone",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"inform_name\"}}, {\"prev_action\": {\"action_name\": \"utter_ask_phone\"}, \"user\": {\"intent\": \"inform_name\"}}]": "action_listen"
+    },
+    "rule_only_slots": [],
+    "rule_only_loops": [],
+    "rules_for_loop_unhappy_path": {},
+    "rules_not_in_stories": [
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"inform_ctc\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"inform_notice_period\"}}, {\"prev_action\": {\"action_name\": \"utter_ask_experience\"}, \"user\": {\"intent\": \"inform_notice_period\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"inform_phone\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"inform_notice_period\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"faq\"}}]",
+      "predicting default action with intent session_start",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"greet\"}}, {\"prev_action\": {\"action_name\": \"utter_ask_name\"}, \"user\": {\"intent\": \"greet\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"inform_availability\"}}, {\"prev_action\": {\"action_name\": \"utter_confirm_booking\"}, \"user\": {\"intent\": \"inform_availability\"}}, {\"prev_action\": {\"action_name\": \"action_store_candidate_data\"}, \"user\": {\"intent\": \"inform_availability\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"greet\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"inform_experience\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"faq\"}}, {\"prev_action\": {\"action_name\": \"action_answer_faq\"}, \"user\": {\"intent\": \"faq\"}}]",
+      "predicting default action with intent back",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"inform_availability\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"inform_name\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"inform_ctc\"}}, {\"prev_action\": {\"action_name\": \"utter_ask_notice_period\"}, \"user\": {\"intent\": \"inform_ctc\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"inform_phone\"}}, {\"prev_action\": {\"action_name\": \"utter_ask_ctc\"}, \"user\": {\"intent\": \"inform_phone\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"inform_availability\"}}, {\"prev_action\": {\"action_name\": \"utter_confirm_booking\"}, \"user\": {\"intent\": \"inform_availability\"}}]",
+      "predicting default action with intent restart",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"inform_experience\"}}, {\"prev_action\": {\"action_name\": \"utter_ask_availability\"}, \"user\": {\"intent\": \"inform_experience\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"inform_name\"}}, {\"prev_action\": {\"action_name\": \"utter_ask_phone\"}, \"user\": {\"intent\": \"inform_name\"}}]"
+    ]
+  }
+}

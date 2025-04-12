@@ -1,0 +1,43 @@
+version: "3.1"
+
+rules:
+  - rule: Greet and ask interest
+    steps:
+      - intent: greet
+      - action: utter_ask_name
+
+  - rule: Ask phone after name
+    steps:
+      - intent: inform_name
+      - action: utter_ask_phone
+
+  - rule: Ask CTC after phone
+    steps:
+      - intent: inform_phone
+      - action: utter_ask_ctc
+
+  - rule: Ask notice period after CTC
+    steps:
+      - intent: inform_ctc
+      - action: utter_ask_notice_period
+
+  - rule: Ask experience after notice
+    steps:
+      - intent: inform_notice_period
+      - action: utter_ask_experience
+
+  - rule: Ask availability after experience
+    steps:
+      - intent: inform_experience
+      - action: utter_ask_availability
+
+  - rule: Confirm booking after availability
+    steps:
+      - intent: inform_availability
+      - action: utter_confirm_booking
+      - action: action_store_candidate_data
+
+  - rule: FAQ
+    steps:
+      - intent: faq
+      - action: action_answer_faq

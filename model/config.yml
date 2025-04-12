@@ -1,0 +1,16 @@
+recipe: default.v1
+language: en
+
+pipeline:
+- name: WhitespaceTokenizer
+- name: RegexFeaturizer
+- name: LexicalSyntacticFeaturizer
+- name: CountVectorsFeaturizer
+- name: DIETClassifier
+- name: EntitySynonymMapper
+- name: RegexEntityExtractor
+- name: FallbackClassifier
+
+policies:
+- name: RulePolicy
+assistant_id: 20250412-054412-scalding-goldbricker
